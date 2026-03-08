@@ -3,4 +3,4 @@ Leptos練習用
 
 
 https://github.com/leptos-rs/start-axum
-↑このコードをベースに改造しています
+このコードをベースに改造しています
