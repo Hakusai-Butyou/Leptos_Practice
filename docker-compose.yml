@@ -1,0 +1,7 @@
+services:
+  app:
+    build: {
+        dockerfile: dockerfile.dev
+    }
+    ports:
+      - "3000:3000" # ホストの3000番をコンテナの3000番へ繋ぐ
