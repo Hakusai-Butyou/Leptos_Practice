@@ -1,7 +1,20 @@
 services:
   app:
-    build: {
+    build:
         dockerfile: dockerfile.dev
-    }
     ports:
       - "3000:3000" # ホストの3000番をコンテナの3000番へ繋ぐ
+    volumes:
+      - cargo-registry:/usr/local/cargo/registry  # ダウンロード済みクレートのキャッシュ
+      - cargo-target:/app/target                 # ビルド済みのライブラリ・バイナリのキャッシュ
+  surrealdb:
+    image: surrealdb/surrealdb:latest
+    command: start --user root --pass root memory
+    ports:
+      - "8000:8000"
+    volumes:
+      - surreal_data:/data
+volumes:
+  surreal_data: # ボリュームの定義
+  cargo-registry: # 外部ボリュームとして作成
+  cargo-target:
