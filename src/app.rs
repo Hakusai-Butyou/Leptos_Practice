@@ -7,6 +7,8 @@ use leptos_router::{
 use crate::assets::shared::sidebar::Sidebar;
 use crate::assets::shared::header::Header;
 use crate::assets::pages::home::Home;
+use crate::assets::pages::login::Login;
+use crate::assets::pages::auth_callback::AuthCallback;
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     let css=r"
@@ -68,6 +70,8 @@ pub fn App() -> impl IntoView {
                 <Router>
                     <Routes fallback=|| "Page not found.".into_view()>
                         <Route path=StaticSegment("") view=Home/>
+                        <Route path=StaticSegment("/login") view=Login/>
+                        <Route path=(StaticSegment("/auth"),StaticSegment("callback")) view=AuthCallback />
                     </Routes>
                 </Router>
             </main>

@@ -16,6 +16,12 @@ leptos_meta = { version = "0.8.0" }
 tokio = { version = "1", features = ["rt-multi-thread","full"], optional = true }
 wasm-bindgen = { version = "0.2.106", optional = true }
 surrealdb = { version = "3.0.2", features = ["protocol-ws"] }
+oauth2 = "4.4"
+tracing = "0.1"
+once_cell = "1.21.3"
+rand = "0.10.0"
+getrandom = { version = "0.4", features = ["wasm_js"] }
+base64 = "0.22.1"
 
 [features]
 hydrate = [
